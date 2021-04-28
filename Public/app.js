@@ -3,27 +3,27 @@
     myConnector.getSchema = function (schemaCallback) {
       const cols = [
         {
-          id: "lastupdatedate",
+          id: "Ultima_actualizacion",
           dataType: tableau.dataTypeEnum.string,
         },
         {
-          id: "type",
+          id: "Tipologia",
           dataType: tableau.dataTypeEnum.string,
         },
         {
-          id: "id",
+          id: "ID",
           dataType: tableau.dataTypeEnum.string,
         },
         {
-          id: "datetime",
+          id: "FechaHora",
           dataType: tableau.dataTypeEnum.string,
         },
         {
-          id: "percentage",
+          id: "Porcentaje",
           dataType: tableau.dataTypeEnum.float,
         },
         {
-          id: "value",
+          id: "Valor",
           dataType: tableau.dataTypeEnum.float,
         },
       ];
@@ -49,12 +49,12 @@
               for (j = 0; j < apiData[i].attributes.values.length; j++) {
                   var dic = apiData[i].attributes.values[j];
                   tableData.push({
-                      datetime: dic.datetime,
-                      percentage: dic.percentage,
-                      value: Number(dic.value),
-                      lastupdatedate: resp.data.attributes["last-update"],
-                      type: apiData[i].type,
-                      id: apiData[i].id,
+                      FechaHora: dic.datetime,
+                      Porcentaje: dic.percentage,
+                      Valor: Number(dic.value),
+                      Ultima_actualizacion: resp.data.attributes["last-update"],
+                      Tipologia: apiData[i].type,
+                      ID: apiData[i].id,
                   });
               }
           }
